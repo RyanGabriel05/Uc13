@@ -77,3 +77,4 @@ SELECT u.Email 'Email do usuário', p.NomePersonagem 'Nome personagem', c.Nome 'C
 FROM Usuarios u, Personagens p, Classes c
 WHERE u.UsuarioId = p.PersonagemId AND
       p.PersonagemId = c.ClasseId
+
