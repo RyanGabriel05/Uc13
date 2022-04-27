@@ -65,3 +65,15 @@ SELECT P.NomePersonagem, C.Nome 'Nome da Classe', C.Descricao, U.Email
 FROM Personagens AS P
 JOIN Classes AS C ON P.ClasseId = C.ClasseId
 JOIN Usuarios as U on P.UsuarioId = U.UsuarioId
+
+SELECT u.Email 'Email do usuário', p.NomePersonagem 'Nome personagem', c.Nome 'Classe', c.Descricao 'Descrição' 
+FROM Usuarios u 
+INNER JOIN Personagens p
+ON u.UsuarioId = p.PersonagemId
+INNER JOIN Classes c
+ON p.PersonagemId = c.ClasseId
+
+SELECT u.Email 'Email do usuário', p.NomePersonagem 'Nome personagem', c.Nome 'Classe', c.Descricao 'Descrição' 
+FROM Usuarios u, Personagens p, Classes c
+WHERE u.UsuarioId = p.PersonagemId AND
+      p.PersonagemId = c.ClasseId
